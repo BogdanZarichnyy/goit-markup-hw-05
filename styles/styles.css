@@ -359,7 +359,7 @@ body {
         0 4px 4px var(--shadow-button);
     user-select: none;
     cursor: pointer;
-    transition-property: background-color box-shadow text-shadow;
+    transition-property: background-image box-shadow text-shadow;
     transition-duration: 250ms;
     transition-timing-function:
         cubic-bezier(0.4, 0, 0.2, 1);
@@ -653,9 +653,6 @@ body {
     color: var(--primary-text-color);
     box-shadow: none;
     transition-property: background-image color box-shadow text-shadow;
-    transition-duration: 250ms;
-    transition-timing-function:
-        cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .cheсked {
