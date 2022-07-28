@@ -176,10 +176,16 @@ address {
     width: 0;
     background-color: var(--general-color);
     border-radius: 2px;
-    transition-property: width background-color;
+    /* transition-property: width background-color;
     transition-duration: 250ms;
     transition-timing-function:
-        cubic-bezier(0.4, 0, 0.2, 1);
+        cubic-bezier(0.4, 0, 0.2, 1); */
+
+    animation-name: animation-underline-none;
+    animation-duration: 250ms;
+    animation-direction: alternate;
+    animation-fill-mode: forwards;
+    animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .current {
@@ -216,16 +222,78 @@ address {
     color: var(--general-color);
 }
 
+@keyframes animation-underline {
+    0% {
+        left: 0;
+        width: 0;
+        background-color: var(--focus-color);
+    }
+
+    100% {
+        left: 0;
+        width: 100%;
+        background-color: var(--focus-color);
+    }
+
+    /* 25% {
+        left: 0;
+        width: 100%;
+        background-color: var(--focus-color);
+    }
+
+    75% {
+        right: 0;
+        width: 100%;
+        background-color: var(--focus-color);
+    } 
+
+    100% {
+        right: 0;
+        width: 0;
+        background-color: var(--focus-color);
+    } */
+}
+
+@keyframes animation-underline-none {
+    0% {
+        right: 0;
+        width: 100%;
+        background-color: var(--focus-color);
+    }
+
+    100% {
+        right: 0;
+        width: 0;
+        background-color: var(--focus-color);
+    }
+}
+
 .navigation-link:focus::before {
-    left: 0;
+    /* left: 0;
     width: 100%;
-    background-color: var(--focus-color);
+    background-color: var(--focus-color); */
+
+    animation-name: animation-underline;
+    /* animation-iteration-count: infinite;
+    animation-duration: 1000ms; */
+    animation-duration: 250ms;
+    animation-direction: alternate;
+    animation-fill-mode: forwards;
+    animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .navigation-link:hover::before {
-    left: 0;
+    /* left: 0;
     width: 100%;
-    background-color: var(--general-color);
+    background-color: var(--general-color); */
+
+    animation-name: animation-underline;
+    /* animation-iteration-count: infinite;
+    animation-duration: 1000ms; */
+    animation-duration: 250ms;
+    animation-direction: alternate;
+    animation-fill-mode: forwards;
+    animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .current:focus::after {
